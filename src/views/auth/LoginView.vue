@@ -1,7 +1,13 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-primary-500 to-primary-600">
-    <div class="container mx-auto pt-[10rem] flex items-center">
-      <div class="w-[70%] max-w-[700px] m-auto bg-[#F8F7FC] rounded-[20px] p-[15px] shadow-[0px_6px_20px_0px_rgba(0,0,0,0.10)] pt-[50px]">
+  <!-- 배경: 모바일 #F8F7FC, PC는 보라색 그라데이션 -->
+  <div class="min-h-screen bg-[#F8F7FC] md:bg-white md:from-[#667eea] md:to-[#764ba2]">
+    <div class="px-0 md:px-4 pt-[3rem] md:pt-[1rem] flex items-center justify-center min-h-screen">
+      <!-- 카드: 모바일 전체 너비, PC 70% + 카드 스타일 -->
+      <div class="w-full md:w-[70%] md:max-w-[700px] bg-[#F8F7FC]
+                  rounded-none md:rounded-[20px]
+                  py-[40px] md:py-[100px]
+                  px-[20px] md:px-[50px]
+                  shadow-none md:shadow-[0px_6px_20px_0px_rgba(0,0,0,0.10)]">
         <h1 class="text-6xl font-bold text-white text-center">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 115" width="100%" height="115">
 
@@ -183,17 +189,18 @@
             </text>
           </svg>
         </h1>
-        <div class="flex gap-4 justify-center bg-[#F7FAFC] mt-[20px] h-[55px] p-[5px] rounded-[10px]">
+
+        <div class="flex justify-center bg-[#F7FAFC] mt-[50px] h-[60px] p-[5px] rounded-[10px]">
           <router-link
               to="/login"
-              class="px-8 py-4 bg-[#fff] text-primary-500 rounded-[10px] font-semibold transition-transform w-[50%]
+              class="px-8 py-4 bg-[#fff] rounded-[10px] font-semibold transition-transform w-[50%]
               items-center flex justify-center shadow-[0px_1px_8px_2px_rgba(0,0,0,0.04)] text-[#6A7AE6] font-[600]"
           >
             로그인
           </router-link>
           <router-link
               to="/signup"
-              class="px-8 py-4 text-white font-semibold transition-transform w-[50%] items-center flex justify-center text-[#7A879C]"
+              class="px-8 py-4 font-semibold transition-transform w-[50%] items-center flex justify-center text-[#7A879C]"
           >
             회원가입
           </router-link>
@@ -234,6 +241,7 @@
                      transition-all text-[14px]"
             />
           </div>
+
           <!-- 자동 로그인 & 아이디/비밀번호 찾기 -->
           <div class="flex items-center justify-between">
             <label class="flex items-center cursor-pointer">
@@ -246,7 +254,7 @@
               />
               <span class="ml-[8px] text-[#4A5568] text-[14px]">자동 로그인</span>
             </label>
-            <a href="#" class="text-[#7A879C] text-[14px] hover:text-[#667eea] transition-colors">
+            <a href="#" class="text-[#7A879C] text-[12px] md:text-[14px] hover:text-[#667eea] transition-colors">
               아이디/비밀번호 찾기
             </a>
           </div>
@@ -254,7 +262,7 @@
           <!-- 로그인 버튼 -->
           <button
               type="submit"
-              class="w-full py-[14px] bg-[#6A7AE6] text-[#fff]
+              class="w-full h-[50px] py-[14px] bg-[#6A7AE6] text-[#fff]
                    rounded-[10px] font-semibold text-[16px] hover:opacity-90 transition-opacity
                    shadow-[0px_4px_12px_rgba(102,126,234,0.25)]"
           >
@@ -277,8 +285,8 @@
           <!-- 카카오 로그인 -->
           <button
               @click="handleSocialLogin('kakao')"
-              class="w-full py-[12px] bg-[#FEE500] text-[#000000D9] rounded-[10px] font-medium text-[14px]
-                   flex items-center justify-center gap-[8px] hover:bg-[#FDD835] transition-colors"
+              class="w-full h-[50px] py-[12px] bg-[#FEE500] text-[#000000D9] rounded-[10px] font-medium text-[14px]
+                   flex items-center justify-center gap-[8px] mb-[10px] hover:bg-[#FDD835] transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M10 2C5.58172 2 2 4.92893 2 8.4C2 10.5196 3.15893 12.3929 4.96964 13.5714L4.07143 17.1429C4.03571 17.2857 4.07143 17.4286 4.17857 17.5357C4.25 17.6071 4.35714 17.6429 4.46429 17.6429C4.53571 17.6429 4.57143 17.6429 4.64286 17.6071L8.60714 15.2143C9.07143 15.2857 9.53571 15.3214 10 15.3214C14.4183 15.3214 18 12.3929 18 8.92857C18 5.42857 14.4183 2 10 2Z" fill="#000000" fill-opacity="0.85"/>
@@ -289,8 +297,8 @@
           <!-- 네이버 로그인 -->
           <button
               @click="handleSocialLogin('naver')"
-              class="w-full py-[12px] bg-[#03C75A] text-white rounded-[10px] font-medium text-[14px]
-                   flex items-center justify-center gap-[8px] hover:bg-[#02B550] transition-colors"
+              class="w-full h-[50px] py-[12px] bg-[#03C75A] text-white rounded-[10px] font-medium text-[14px]
+                   flex items-center justify-center gap-[8px] mb-[10px] hover:bg-[#02B550] transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M13.5 10.5L8.5 2H2V18H6.5V9.5L11.5 18H18V2H13.5V10.5Z" fill="white"/>
@@ -301,8 +309,8 @@
           <!-- 구글 로그인 -->
           <button
               @click="handleSocialLogin('google')"
-              class="w-full py-[12px] bg-white text-[#3C4043] rounded-[10px] font-medium text-[14px]
-                   flex items-center justify-center gap-[8px] border border-[#DADCE0]
+              class="w-full h-[50px] py-[12px] bg-white text-[#3C4043] rounded-[10px] font-medium text-[14px]
+                   flex items-center justify-center gap-[8px] border border-[#DADCE0] mb-[10px]
                    hover:bg-[#F8F9FA] transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -319,6 +327,7 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'

@@ -13,16 +13,12 @@ export default {
                     200: '#c7d2fe',
                     300: '#a5b4fc',
                     400: '#818cf8',
-                    500: '#667eea',  // 메인 색상
-                    600: '#764ba2',  // 보조 색상
+                    500: '#667eea',
+                    600: '#764ba2',
                     700: '#6d28d9',
                     800: '#5b21b6',
                     900: '#4c1d95',
                 },
-                gold: '#ffd700',
-            },
-            fontFamily: {
-                sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui'],
             },
         },
     },
