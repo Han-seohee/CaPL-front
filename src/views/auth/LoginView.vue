@@ -226,7 +226,7 @@
           </div>
 
           <!-- 비밀번호 입력 -->
-          <div>
+          <div class="!mt-[8px]">
             <label for="password" class="block text-[#4A5568] text-[14px] font-medium mb-[8px]">
               비밀번호
             </label>
